@@ -1,2 +1,2 @@
-# -musicdb-app-angular
+# musicdb-app-angular
 MusicDB Template
