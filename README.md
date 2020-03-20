@@ -1,27 +1,48 @@
-# MusicdbAppAngular
+Deezer is an internet-based music streaming service.  You are required to implement an Angular app to explore its database.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
-## Development server
+- Users should be able to search for artists.  For every artist found show the artist's picture and the number of fans they have.  On bigger screens, with more available space, also include the total number of albums.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ 
 
-## Code scaffolding
+- Clicking/tapping the artist must allow users to see basic information about the them, like its total number of fans.  Also show its top 5 tracks along with a list of all their albums.  For every album include the year in which it was released.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ 
 
-## Build
+Be sure to follow best practices and to demonstrate the skills you've learnt to develop a modern web app.  Keep in mind that our team intends to add more features to your code and that they expect this to be quick and easy for them to do.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ 
 
-## Running unit tests
+We encourage you to add more assets as necessary and to enhance content with colour and imagery, wherever it makes sense, so users may enjoy using your app.  This is equally important to us when reviewing your assessment.
+ 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+IMPORTANT
 
-## Running end-to-end tests
+Most browsers enforce the same-origin restriction which may prevent HTTP calls to the Deezer API.  To circumvent this problem and to enable CORS (Cross-origin resource sharing) in your app, simply forward requests through a public CORS proxy that adds the Access-Control-Allow-Origin header to any OPTIONS pre-flight response.  For example, when using the https://cors-anywhere.herokuapp.com/ proxy, then a call intended to https://api.deezer.com/search?q=eminem must become a call to https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem in your code.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Deezer API Reference
+--
 
-## Further help
+https://developers.deezer.com/api
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+EXAMPLE
+--
+
+Below are some illustrations to help inspire your implementation.
+
+Artist view [Desktop]
+
+![](https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/artist-web-view.png "Artist desktop")
+
+Artist view [Mobile]
+
+![](https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/artist-mobile-view.png "Artist mobile")
+
+
+Artist details view [Desktop]
+
+![](https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/artist-details-web-view.png "Artist details desktop")
+
+Artist details view [Mobile]
+
+![](https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/artist-details-mobile.PNG "Artist details mobile")
