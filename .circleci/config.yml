@@ -20,10 +20,8 @@ jobs:
       name: node/default
     steps:
        - checkout
-       - node/with-cache:
-          steps:
-            - run: npm install
-            - run: ng lint musicdb-app-angular
+       override:
+        - npm run lint
 workflows:
     build-and-test:
       jobs:
