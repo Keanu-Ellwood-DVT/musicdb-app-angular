@@ -14,7 +14,7 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: ng lint musicdb-app-angular
+            - run: lint
   test:
     executor:
       name: node/default
