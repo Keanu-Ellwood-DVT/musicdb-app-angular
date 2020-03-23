@@ -14,14 +14,13 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: lint
   test:
     executor:
       name: node/default
     steps:
-       - checkout
-       - steps:
-        - run: npm run lint
+       - run:
+        name: TSlint
+        command: npm run lint
 workflows:
     build-and-test:
       jobs:
