@@ -20,7 +20,7 @@ jobs:
       name: node/default
     steps:
        - checkout
-       override:
+       - override:
         - npm run lint
 workflows:
     build-and-test:
