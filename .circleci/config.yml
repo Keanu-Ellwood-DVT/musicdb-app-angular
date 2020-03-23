@@ -10,9 +10,7 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run:
-              name: TSLint
-              command: ng lint musicdb-app-angular
+            - run: ng lint musicdb-app-angular
 workflows:
     build-and-test:
       jobs:
