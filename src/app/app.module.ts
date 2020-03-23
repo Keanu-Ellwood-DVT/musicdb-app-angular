@@ -9,19 +9,24 @@ import { MenuComponent } from './menu/menu.component';
 import { ArtistDetailsComponent } from './artist/artist-details/artist-details.component';
 import { ArtistListComponent } from './artist/artist-list/artist-list.component';
 import { ArtistCardComponent } from './artist/artist-card/artist-card.component';
+import { ResourceNotFoundComponent } from './resource-not-found/resource-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ArtistDetailsComponent,
     ArtistListComponent,
-    ArtistCardComponent
+    ArtistCardComponent,
+    ResourceNotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
