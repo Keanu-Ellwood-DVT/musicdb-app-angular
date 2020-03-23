@@ -1,0 +1,18 @@
+* {
+  font-family: 'Prompt', sans-serif;
+}
+
+mat-toolbar img{
+  width: 80px;
+  height: auto;
+  margin-right: -15px;
+}
+
+mat-toolbar {
+  height: 80px;
+}
+
+mat-toolbar span{
+  font-weight: Extra-Light;
+  font-size: 40px;
+}
