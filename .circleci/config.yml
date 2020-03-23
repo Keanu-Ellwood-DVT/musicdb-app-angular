@@ -1,8 +1,12 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+dependencies:
+  pre:
+    - npm install npm@latest -g
+    - npm install angular-cli@latest -g
 jobs:
-  build-and-test:
+  build:
     executor:
       name: node/default
     steps:
@@ -11,7 +15,17 @@ jobs:
           steps:
             - run: npm install
             - run: ng lint musicdb-app-angular
+  test:
+    executor:
+      name: node/default
+    steps:
+       - checkout
+       - node/with-cache:
+          steps:
+            - run: npm install
+            - run: ng lint musicdb-app-angular
 workflows:
     build-and-test:
       jobs:
-        - build-and-test
+        - build
+        - test
