@@ -13,6 +13,8 @@ import { ArtistsService } from "./services/artists.service";
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent, ResourceNotFoundComponent, MenuComponent],
   imports: [
@@ -25,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatInputModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
