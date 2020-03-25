@@ -1,1 +1,36 @@
-<p>artist-details works!</p>
+<section class="artist-landing">
+  <section
+    class="hero-image"
+    [ngStyle]="{ 'background-image': 'url(' + artist.picture_xl + ')' }"
+  >
+    <div class="hero-image-details">
+      <h1>{{ artist.name }}</h1>
+      <h3>{{ artist.nb_fan }} Fans</h3>
+    </div>
+  </section>
+
+  <section class="top-tracks">
+    <mat-card class="tracks-card">
+      <mat-card-header>
+        <mat-card-title>
+          Top Tracks
+        </mat-card-title>
+      </mat-card-header>
+      <ng-container *ngFor="let track of tracks.data">
+        <mat-divider> </mat-divider>
+        <mat-list>
+          <app-track-list [track]="track"></app-track-list>
+        </mat-list>
+      </ng-container>
+    </mat-card>
+  </section>
+</section>
+<div *ngIf="albums" id="album-heading">
+  <h1>Albums</h1>
+</div>
+
+<section *ngIf="albums" class="album-container">
+  <ng-container *ngFor="let album of albums.data">
+    <app-album-card [album]="album"></app-album-card>
+  </ng-container>
+</section>
