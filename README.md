@@ -1,3 +1,10 @@
+https://weeqnd.firebaseapp.com
+https://weeqnd.firebaseapp.com
+https://weeqnd.firebaseapp.com
+https://weeqnd.firebaseapp.com
+
+Application is a PWA 
+
 Deezer is an internet-based music streaming service.  You are required to implement an Angular app to explore its database.
 
 
