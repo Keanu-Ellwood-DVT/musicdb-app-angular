@@ -25,46 +25,38 @@ export class ArtistListComponent implements OnInit {
 
   constructor(
     private artistsService: ArtistsService,
-    private queryService: QueryService
-  ) {}
+    private queryService: QueryService ) {
+    this.artists = new Artists();
+  }
 
   ngOnInit(): void {
     // this.artistsService.getInitialArtists().subscribe(x => {
     //   this.artists = x;
     // });
 
-    this.artistsService
-          .getTopArtists()
-          .subscribe(x => {
-            //this.artists = new Artists();
-            this.artists.data = x;
-            this.artists.next = "";
-          });
+    this.artistsService.getTopArtists().subscribe(x => {
+      // this.artists =
+      this.artists.data = x;
+      this.artists.next = "";
+    });
 
     this.queryService.queryString$.subscribe(query => {
       if (query === "") {
-        this.artistsService
-        .getInitialArtists()
-        .subscribe(x => {
-          debounceTime(500),
-          this.artists = x;
-        });
-
         // this.artistsService
-        //   .getTopArtists()
-        //   .subscribe(x => {
-        //     this.artists.data = x;
-        //     this.artists.next = "";
-        //   });
+        // .getInitialArtists()
+        // .subscribe(x => {
+        //   debounceTime(500),
+        //   this.artists = x;
+        // });
 
-      }
-      else {
-        this.artistsService
-          .getArtists(query)
-          .subscribe(x => {
-            debounceTime(500),
-            this.artists = x
-          });
+        this.artistsService.getTopArtists().subscribe(x => {
+          this.artists.data = x;
+          this.artists.next = "";
+        });
+      } else {
+        this.artistsService.getArtists(query).subscribe(x => {
+          debounceTime(500), (this.artists = x);
+        });
       }
     });
   }
