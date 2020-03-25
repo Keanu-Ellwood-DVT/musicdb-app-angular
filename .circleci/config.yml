@@ -1,8 +1,12 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+dependencies:
+  pre:
+    - npm install npm@latest -g
+    - npm install angular-cli@latest -g
 jobs:
-  build-and-test:
+  build:
     executor:
       name: node/default
     steps:
@@ -10,8 +14,16 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: npm test
+  test:
+    executor:
+      name: node/default
+    steps:
+      - run:
+          name: TSlint
+          command: npm run lint
+
 workflows:
     build-and-test:
       jobs:
-        - build-and-test
+        - build
+        - test
