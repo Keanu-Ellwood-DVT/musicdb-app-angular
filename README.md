@@ -1,7 +1,4 @@
 https://weeqnd.firebaseapp.com
-https://weeqnd.firebaseapp.com
-https://weeqnd.firebaseapp.com
-https://weeqnd.firebaseapp.com
 
 Application is a PWA 
 
@@ -49,6 +46,8 @@ Artist view [Mobile]
 Artist details view [Desktop]
 
 ![](https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/artist-details-web-view.png "Artist details desktop")
+
+[![CircleCI](https://circleci.com/gh/Keanu-Ellwood-DVT/musicdb-app-angular.svg?style=svg)](https://circleci.com/gh/Keanu-Ellwood-DVT/musicdb-app-angular)
 
 Artist details view [Mobile]
 
