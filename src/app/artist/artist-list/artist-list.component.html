@@ -1,1 +1,7 @@
-<p>artist-list works!</p>
+<div *ngIf="artists" class="artist-container">
+  <ng-container class="artist-card-container" *ngFor="let artist of artists.data">
+    <a class="artist-details-link" [routerLink]="['/artists', artist.id]">
+      <app-artist-card [artist]="artist"></app-artist-card>
+    </a>
+  </ng-container>
+</div>
