@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component'
 import { ArtistListComponent } from './artist-list/artist-list.component'
@@ -7,10 +6,10 @@ import { ResourceNotFoundComponent } from '../resource-not-found/resource-not-fo
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     children: [
       {
-        path: '',
+        path: "",
         component: ArtistListComponent
       },
       {
@@ -22,7 +21,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'characters'
+    redirectTo: 'artists'
   },
   {
     path: '**',
@@ -31,7 +30,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

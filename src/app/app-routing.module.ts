@@ -9,6 +9,10 @@ const routes: Routes = [
     redirectTo: 'artists'
   },
   {
+    path: 'artists',
+    loadChildren: () => import('./artist/artist.module').then(m => m.ArtistModule)
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: ResourceNotFoundComponent

@@ -18,9 +18,10 @@ jobs:
     executor:
       name: node/default
     steps:
-       - run:
-        name: TSlint
-        command: npm run lint
+      - run:
+          name: TSlint
+          command: npm run lint
+
 workflows:
     build-and-test:
       jobs:

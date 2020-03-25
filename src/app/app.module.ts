@@ -1,34 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatMenuModule } from "@angular/material/menu";
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { RouterModule } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ResourceNotFoundComponent } from "./resource-not-found/resource-not-found.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { ArtistsService } from "./services/artists.service";
+import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
-import { ArtistDetailsComponent } from './artist/artist-details/artist-details.component';
-import { ArtistListComponent } from './artist/artist-list/artist-list.component';
-import { ArtistCardComponent } from './artist/artist-card/artist-card.component';
-import { ResourceNotFoundComponent } from './resource-not-found/resource-not-found.component';
-import { AppRoutingModule } from './app-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    ArtistDetailsComponent,
-    ArtistListComponent,
-    ArtistCardComponent,
-    ResourceNotFoundComponent
-  ],
+  declarations: [AppComponent, ResourceNotFoundComponent, MenuComponent],
   imports: [
+    RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
