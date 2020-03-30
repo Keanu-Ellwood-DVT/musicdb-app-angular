@@ -16,7 +16,7 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: TSLin
+          name: TSLint
           command: npm run lint
       - run:
           name: Build
