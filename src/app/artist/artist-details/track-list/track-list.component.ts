@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Track } from "src/app/models/track";
-import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: "app-track-list",

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { Artist } from "../../models/artist";
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { switchMap } from "rxjs/operators";
+import { ActivatedRoute} from "@angular/router";
 import { ArtistDetailsService } from "src/app/services/artist-details.service";
 import { Tracks } from "src/app/models/tracks";
 import { Albums } from 'src/app/models/albums';
@@ -44,7 +43,7 @@ export class ArtistDetailsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    
+
   }
 
 }

@@ -9,7 +9,6 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ResourceNotFoundComponent } from "./resource-not-found/resource-not-found.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { ArtistsService } from "./services/artists.service";
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
