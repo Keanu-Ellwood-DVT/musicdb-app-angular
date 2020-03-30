@@ -4,4 +4,4 @@ Weeqnd is a web-application that leverages the Deezer API to allow users to sear
 
 Master: [![CircleCI](https://circleci.com/gh/Keanu-Ellwood-DVT/musicdb-app-angular.svg?style=shield)](https://circleci.com/gh/Keanu-Ellwood-DVT/musicdb-app-angular)
 
-Development: [![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/Keanu-Ellwood-DVT/musicdb-app-angular/tree/development)
+Development: [![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=shield)](https://circleci.com/gh/Keanu-Ellwood-DVT/musicdb-app-angular/tree/development)
