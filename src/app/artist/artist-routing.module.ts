@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArtistDetailsComponent } from './artist-details/artist-details.component'
-import { ArtistListComponent } from './artist-list/artist-list.component'
-import { ResourceNotFoundComponent } from '../resource-not-found/resource-not-found.component'
+import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
+import { ResourceNotFoundComponent } from '../resource-not-found/resource-not-found.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     children: [
       {
-        path: "",
+        path: '',
         component: ArtistListComponent
       },
       {

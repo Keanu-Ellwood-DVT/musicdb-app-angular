@@ -1,4 +1,4 @@
-import { Track } from './track'
+import { Track } from './track';
 
 export class Tracks {
   data: Track[];

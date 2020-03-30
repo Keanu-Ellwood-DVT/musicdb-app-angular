@@ -1,5 +1,5 @@
-import { AlbumMinified } from "./album";
-import { Contributor } from "./contributor";
+import { AlbumMinified } from './album';
+import { Contributor } from './contributor';
 import { ArtistMinified } from './artist';
 
 export class Track {

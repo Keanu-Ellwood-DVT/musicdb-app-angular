@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable, forkJoin } from "rxjs";
-import { environment } from "src/environments/environment";
-import { Artists } from "../models/artists";
-import { Artist } from "../models/artist";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, forkJoin } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Artists } from '../models/artists';
+import { Artist } from '../models/artist';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ArtistsService {
   constructor(private http: HttpClient) {}
@@ -16,7 +16,7 @@ export class ArtistsService {
   }
 
 getTopArtists(): Observable<Artist[]> {
-    let artists$: Observable<Artist>[] = [];
+    const artists$: Observable<Artist>[] = [];
 
     for (let i = 1; i < 22; i++) {
         artists$.push(
@@ -30,7 +30,7 @@ getTopArtists(): Observable<Artist[]> {
 
   getArtists(query?: string): Observable<Artists> {
     return this.http.get<Artists>(
-      `${environment.apiUri}/search/artist${query ? `?q=${query}` : ""}`
+      `${environment.apiUri}/search/artist${query ? `?q=${query}` : ''}`
     );
   }
 }

@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { QueryService } from "../services/query.service";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { QueryService } from '../services/query.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
-  selector: "app-menu",
-  templateUrl: "./menu.component.html",
-  styleUrls: ["./menu.component.css"]
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
   form: FormGroup;
@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   constructor(private queryService: QueryService, private fb: FormBuilder) {}
 
   get query() {
-    return this.form.get("query");
+    return this.form.get('query');
   }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     });
 
     this.query.valueChanges.subscribe(value => {
-    	this.queryService.updateQuery(value);
+     this.queryService.updateQuery(value);
     });
   }
 }

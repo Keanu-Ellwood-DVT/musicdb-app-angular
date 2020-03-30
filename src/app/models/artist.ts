@@ -15,7 +15,7 @@ export class Artist {
   type: string;
 }
 
-export class ArtistMinified{
+export class ArtistMinified {
   id: number;
   name: string;
   tracklist: string;

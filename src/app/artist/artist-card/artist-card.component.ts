@@ -1,10 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Artist } from "../../models/artist";
-//import { Router } from "@angular/router";
+import { Component, OnInit, Input } from '@angular/core';
+import { Artist } from '../../models/artist';
 @Component({
-  selector: "app-artist-card",
-  templateUrl: "./artist-card.component.html",
-  styleUrls: ["./artist-card.component.css"]
+  selector: 'app-artist-card',
+  templateUrl: './artist-card.component.html',
+  styleUrls: ['./artist-card.component.css']
 })
 export class ArtistCardComponent implements OnInit {
   constructor() {}

@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Observable, BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class QueryService {
 
   query$: BehaviorSubject<string>;
 
   constructor() {
-    this.query$ = new BehaviorSubject("");
+    this.query$ = new BehaviorSubject('');
   }
 
   get queryString$(): Observable<string> {
