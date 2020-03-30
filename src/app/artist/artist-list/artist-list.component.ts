@@ -7,6 +7,7 @@ import { Artists } from '../../models/artists';
 import { ArtistsService } from '../../services/artists.service';
 import { QueryService } from 'src/app/services/query.service';
 import { SearchStateService } from 'src/app/services/search-state.service';
+import { Artist } from 'src/app/models/artist';
 
 @Component({
   selector: 'app-artist-list',
@@ -27,6 +28,9 @@ export class ArtistListComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchStateService.setMessage(true);
+    // this.artistsService.getTopArtists().subscribe(x => {
+    //   this.artists.data = x;
+    // });
     this.artistsService.getTopArtists().subscribe(x => {
       this.artists.data = x;
     });
@@ -35,6 +39,7 @@ export class ArtistListComponent implements OnInit {
       if (query === '') {
         this.artistsService.getTopArtists().subscribe(x => {
           this.artists.data = x;
+         // (this.artists = x);
         });
       } else {
         this.artistsService.getArtists(query).subscribe(x => {
