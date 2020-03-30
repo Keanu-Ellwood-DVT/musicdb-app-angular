@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Artist } from "../../models/artist";
 import { ActivatedRoute} from "@angular/router";
 import { ArtistDetailsService } from "src/app/services/artist-details.service";
@@ -9,7 +9,7 @@ import { Albums } from 'src/app/models/albums';
   templateUrl: "./artist-details.component.html",
   styleUrls: ["./artist-details.component.css"]
 })
-export class ArtistDetailsComponent implements OnInit, OnChanges {
+export class ArtistDetailsComponent implements OnInit {
 
   @Input() query: string;
 
@@ -40,10 +40,6 @@ export class ArtistDetailsComponent implements OnInit, OnChanges {
     });
 
     this.trackLength = this.tracks.data.length;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-
   }
 
 }
