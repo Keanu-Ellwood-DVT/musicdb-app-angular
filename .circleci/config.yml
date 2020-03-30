@@ -1,6 +1,5 @@
 jobs:
   build_test:
-    working_directory: ~/musicdb-app-angular
     docker:
       - image: circleci/node:12.9.1-browsers
     steps:
