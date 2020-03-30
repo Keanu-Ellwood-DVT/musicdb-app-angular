@@ -1,24 +1,31 @@
-version: 2.1
-orbs:
-  node: circleci/node@1.1.6
-dependencies:
-  pre:
-    - npm install npm@latest -g
-    - npm install angular-cli@latest -g
 jobs:
-  build:
-    executor:
-      name: node/default
+  build_test:
+    docker:
+      - image: circleci/node:12.9.1-browsers
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
       - run:
-          name: TSlint
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: TSLint
           command: npm run lint
-
+      - run:
+          name: Build
+          command: ./node_modules/@angular/cli/bin/ng build --prod
+      - run:
+          name: Firebase Deploy
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
 workflows:
-    build-and-test:
-      jobs:
-        - build
+  version: 2
+  build_test:
+    jobs:
+      - build_test

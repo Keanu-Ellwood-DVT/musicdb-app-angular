@@ -1,6 +1,6 @@
 import { Album } from './album';
 
-export class Albums{
+export class Albums {
   data: Album[];
   next: string;
 }
