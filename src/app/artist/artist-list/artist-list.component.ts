@@ -28,9 +28,6 @@ export class ArtistListComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchStateService.setMessage(true);
-    // this.artistsService.getTopArtists().subscribe(x => {
-    //   this.artists.data = x;
-    // });
     this.artistsService.getTopArtists().subscribe(x => {
       this.artists.data = x;
     });
@@ -39,7 +36,6 @@ export class ArtistListComponent implements OnInit {
       if (query === '') {
         this.artistsService.getTopArtists().subscribe(x => {
           this.artists.data = x;
-         // (this.artists = x);
         });
       } else {
         this.artistsService.getArtists(query).subscribe(x => {
