@@ -10,17 +10,11 @@ export class TrackListComponent implements OnInit {
   @Input()
   track: Track;
 
-  trackLength: string;
+  trackLength: number;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.convertTrackTime();
-  }
-
-  convertTrackTime() {
-    var value = this.track.duration;
-    this.trackLength =
-      Math.floor(value / 60) + ":" + (value % 60 ? value % 60 : "00");
+    this.trackLength = this.track.duration;
   }
 }
