@@ -6,7 +6,7 @@
 
   <span class="fill-remaining-space"></span>
 
-  <form class="search-form" [formGroup]="form">
+  <form *ngIf="searchbarState === true" class="search-form" [formGroup]="form">
      <mat-form-field>
       <mat-label>Search for Artists</mat-label>
       <input

@@ -6,6 +6,7 @@ import {
 import { Artists } from '../../models/artists';
 import { ArtistsService } from '../../services/artists.service';
 import { QueryService } from 'src/app/services/query.service';
+import { SearchStateService } from 'src/app/services/search-state.service';
 
 @Component({
   selector: 'app-artist-list',
@@ -19,12 +20,13 @@ export class ArtistListComponent implements OnInit {
 
   constructor(
     private artistsService: ArtistsService,
-    private queryService: QueryService ) {
+    private queryService: QueryService,
+    private searchStateService: SearchStateService ) {
     this.artists = new Artists();
   }
 
   ngOnInit(): void {
-
+    this.searchStateService.setMessage(true);
     this.artistsService.getTopArtists().subscribe(x => {
       this.artists.data = x;
     });
