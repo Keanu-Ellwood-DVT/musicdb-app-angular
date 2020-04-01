@@ -15,6 +15,11 @@ export class Artist {
   type: string;
 }
 
+export class Artists {
+  data: Artist[];
+  next: string;
+}
+
 export class ArtistMinified {
   id: number;
   name: string;

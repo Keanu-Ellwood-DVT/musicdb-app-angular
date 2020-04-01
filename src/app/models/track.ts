@@ -2,6 +2,11 @@ import { AlbumMinified } from './album';
 import { Contributor } from './contributor';
 import { ArtistMinified } from './artist';
 
+export class Tracks {
+  data: Track[];
+  next: string;
+}
+
 export class Track {
   id: number;
   readable: boolean;
