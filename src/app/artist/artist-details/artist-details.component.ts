@@ -17,8 +17,7 @@ export class ArtistDetailsComponent implements OnInit {
   artist: Artist;
   tracks: Tracks;
   albums: Albums;
-
-  trackLength: number;
+  
   constructor(
     private route: ActivatedRoute,
     private artistDetailsService: ArtistDetailsService,
@@ -43,8 +42,6 @@ export class ArtistDetailsComponent implements OnInit {
     this.artistDetailsService.getArtistAlbums(id).subscribe(x => {
       this.albums = x;
     });
-
-    this.trackLength = this.tracks.data.length;
   }
 
 }
