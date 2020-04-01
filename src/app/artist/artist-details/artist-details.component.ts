@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Artist } from '../../models/artist';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistDetailsService } from 'src/app/services/artist-details.service';
-import { Tracks } from 'src/app/models/tracks';
-import { Albums } from 'src/app/models/albums';
+import { Tracks } from 'src/app/models/track';
+import { Albums } from 'src/app/models/album';
 import { SearchStateService } from 'src/app/services/search-state.service';
 @Component({
   selector: 'app-artist-details',
