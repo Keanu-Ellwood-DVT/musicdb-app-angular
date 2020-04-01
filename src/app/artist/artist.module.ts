@@ -9,6 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { TrackListComponent } from './artist-details/track-list/track-list.component';
 import { AlbumCardComponent } from './artist-details/album-card/album-card.component';
+import { MenuModule } from '../menu.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AlbumCardComponent } from './artist-details/album-card/album-card.compo
     TrackListComponent,
     AlbumCardComponent
   ],
-  imports: [CommonModule, ArtistRoutingModule, MatCardModule, MatDividerModule, MatListModule],
+  imports: [CommonModule, ArtistRoutingModule, MatCardModule, MatDividerModule, MatListModule, MenuModule],
   exports: [ArtistRoutingModule]
 })
 export class ArtistModule {}
