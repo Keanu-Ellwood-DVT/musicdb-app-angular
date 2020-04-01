@@ -15,6 +15,6 @@ export class TrackListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.trackLength = this.track.duration;
+    this.trackLength = this.track.duration * 1000;
   }
 }
