@@ -1,30 +1,48 @@
-<section class="artist-landing">
-  <section
-    class="hero-image"
-    [ngStyle]="{ 'background-image': 'url(' + artist.picture_xl + ')' }"
-  >
-    <div class="hero-image-details">
-      <h1>{{ artist.name }}</h1>
-      <h3>{{ artist.nb_fan }} Fans</h3>
-    </div>
-  </section>
+<app-menu></app-menu>
 
-  <section class="top-tracks">
-    <mat-card class="tracks-card">
-      <mat-card-header>
-        <mat-card-title>
-          Top Tracks
-        </mat-card-title>
-      </mat-card-header>
-      <ng-container *ngFor="let track of tracks.data">
-        <mat-divider> </mat-divider>
-        <mat-list>
-          <app-track-list [track]="track"></app-track-list>
-        </mat-list>
-      </ng-container>
-    </mat-card>
+<ng-container *ngIf="tracks.data.length > 0; then thenTemplate; else elseTemplate"></ng-container>
+
+<ng-template #thenTemplate>
+  <section class="artist-landing">
+    <section
+      class="hero-image"
+      [ngStyle]="{ 'background-image': 'url(' + artist.picture_xl + ')'}">
+      <div class="hero-image-details">
+        <h1>{{ artist.name }}</h1>
+        <h3>{{ artist.nb_fan }} Fans</h3>
+      </div>
+    </section>
+    <section class="top-tracks" *ngIf="tracks.data as tracks">
+      <mat-card class="tracks-card">
+        <mat-card-header>
+          <mat-card-title>
+            Top Tracks
+          </mat-card-title>
+        </mat-card-header>
+        <ng-container *ngFor="let track of tracks">
+          <mat-divider> </mat-divider>
+          <mat-list>
+            <app-track-list [track]="track"></app-track-list>
+          </mat-list>
+        </ng-container>
+      </mat-card>
+    </section>
   </section>
-</section>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <section class="artist-landing-no-tracks">
+    <section
+      class="hero-image"
+      [ngStyle]="{ 'background-image': 'url(' + artist.picture_xl + ')' }">
+      <div class="hero-image-details">
+        <h1>{{ artist.name }}</h1>
+        <h3>{{ artist.nb_fan }} Fans</h3>
+      </div>
+    </section>
+  </section>
+</ng-template>
+
 <div *ngIf="albums" id="album-heading">
   <h1>Albums</h1>
 </div>
