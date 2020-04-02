@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { QueryService } from '../services/query.service';
+import { QueryService } from '../../services/query.service';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -22,8 +22,12 @@ export class SearchBarComponent implements OnInit {
       query: null,
     });
 
-    this.query.valueChanges.pipe(debounceTime(300)).subscribe(value => {
-      this.queryService.updateQuery(value)
+    this.query.valueChanges.pipe(debounceTime(500)).subscribe(value => {
+      if (/\S/.test(value)) {
+        this.queryService.updateQuery(value);
+      } else {
+        this.queryService.updateQuery('');
+      }
     });
   }
 }
