@@ -16,6 +16,11 @@ export class Album {
   type: string;
 }
 
+export class Albums {
+  data: Album[];
+  next: string;
+}
+
 export class AlbumMinified {
   id: number;
   title: string;

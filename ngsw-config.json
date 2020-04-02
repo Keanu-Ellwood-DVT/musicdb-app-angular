@@ -9,12 +9,20 @@
         "files": [
           "/favicon.ico",
           "/index.html",
+          "/app/artist/artist-list/*.html",
+          "/app/artist/artist-list/*.css",
+          "/app/menu/*.ts",
+          "/app/menu/*.html",
+          "/app/menu/*.css",
+          "/app/artist/artist-list/*.ts",
+          "/app/artist/*.ts",
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
         ]
       }
-    }, {
+    },
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",

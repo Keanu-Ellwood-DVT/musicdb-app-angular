@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, range } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Artists } from '../models/artists';
-import { Artist } from '../models/artist';
+import { Artist, Artists } from '../models/artist';
 import { mergeMap, filter, toArray, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'

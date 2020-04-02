@@ -1,0 +1,8 @@
+<mat-toolbar color="#d7d7d7" class="app-toolbar">
+  <section [routerLink]="['/artists']" id="app-icon-name">
+    <img src="../../assets/images/icon.png" id="menu-icon" />
+    <span id="menu-name">WEEQND<sub>music</sub></span>
+  </section>
+  <span class="fill-remaining-space"></span>
+  <ng-content select="app-search-bar"></ng-content>
+</mat-toolbar>

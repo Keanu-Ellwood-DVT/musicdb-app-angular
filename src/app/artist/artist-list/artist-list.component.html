@@ -1,7 +1,23 @@
-<div *ngIf="artists" class="artist-container">
-  <ng-container class="artist-card-container" *ngFor="let artist of artists.data">
+<ng-container *ngIf="(pageLoading$ | async) === false">
+  <app-menu >
+    <app-search-bar></app-search-bar>
+  </app-menu>
+</ng-container>
+
+<div
+  *ngIf="artists && (pageLoading$ | async) === false"
+  class="artist-container">
+  <ng-container
+    class="artist-card-container"
+    *ngFor="let artist of artists.data">
     <a class="artist-details-link" [routerLink]="['/artists', artist.id]">
       <app-artist-card [artist]="artist"></app-artist-card>
     </a>
+  </ng-container>
+</div>
+
+<div *ngIf="(pageLoading$ | async)" class="loading-indicator">
+  <ng-container >
+    <app-spinner></app-spinner>
   </ng-container>
 </div>
