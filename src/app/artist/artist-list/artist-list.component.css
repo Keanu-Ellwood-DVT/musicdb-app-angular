@@ -7,15 +7,15 @@
   padding-bottom: 2rem;
 }
 
-.artist-details-link{
+.artist-details-link {
   text-decoration: none;
 }
 
-.artist-details-link:hover{
+.artist-details-link:hover {
   font-weight: bolder;
 }
 
-.artist-card-container{
+.artist-card-container {
   background: #b8c7dd;
 }
 
@@ -23,7 +23,7 @@
   .artist-container {
     display: grid;
     justify-content: center;
-    grid-template-columns: .3fr .3fr;
+    grid-template-columns: 0.3fr 0.3fr;
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
   }
@@ -54,4 +54,11 @@
     grid-template-columns: 252px 252px 252px 252px 252px;
     grid-column-gap: 1rem;
   }
+}
+
+.loading-indicator {
+  display: grid;
+  height: 88vh;
+  justify-content: center;
+  align-items: center;
 }

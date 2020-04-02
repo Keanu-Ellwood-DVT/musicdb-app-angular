@@ -138,3 +138,10 @@
     background-size: cover;
   }
 }
+
+.loading-indicator {
+  display: grid;
+  height: 88vh;
+  justify-content: center;
+  align-items: center;
+}
