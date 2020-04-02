@@ -9,7 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { TrackListComponent } from './artist-details/track-list/track-list.component';
 import { AlbumCardComponent } from './artist-details/album-card/album-card.component';
-import { MenuModule } from '../menu.module';
+import { MenuModule } from '../static/menu.module';
 
 @NgModule({
   declarations: [
