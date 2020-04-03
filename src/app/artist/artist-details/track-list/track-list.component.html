@@ -29,7 +29,7 @@
         (click)="pauseTrack()">
         <mat-icon>stop</mat-icon>
       </button>
-      <iframe class="frame" [src]="track.preview | safe: 'resourceUrl'"></iframe>
+      <iframe class="frame" [src]="track.preview | safe"></iframe>
     </ng-template>
 
     <span>{{ trackLength * 1000 | date: "mm:ss":"UTC" }}</span>

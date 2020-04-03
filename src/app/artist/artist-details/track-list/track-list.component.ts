@@ -24,7 +24,7 @@ export class TrackListComponent implements OnInit {
     this.playState$.next(true);
   }
 
-  pauseTrack(){
+  pauseTrack() {
     this.playState$.next(false);
   }
 }
