@@ -1,9 +1,23 @@
 <ng-container *ngIf="(pageLoading$ | async) === false">
-  <app-menu></app-menu>
+  <app-menu>
+    <button
+      [routerLink]="['/artists']"
+      class="returnButton"
+      mat-button
+      matSuffix
+      mat-icon-button
+      matTooltip="Return to artists page."
+      aria-label="home link">
+      <div class="text-icon-button">
+        <mat-icon>home</mat-icon>
+        Return to artists page
+      </div>
+    </button>
+  </app-menu>
   <ng-container
     *ngIf="tracks.data.length > 0; then thenTemplate; else elseTemplate"
-  ></ng-container>
-
+  >
+  </ng-container>
   <ng-template #thenTemplate>
     <section class="artist-landing">
       <section
@@ -37,8 +51,7 @@
     <section class="artist-landing-no-tracks">
       <section
         class="hero-image"
-        [ngStyle]="{ 'background-image': 'url(' + artist.picture_xl + ')' }"
-      >
+        [ngStyle]="{ 'background-image': 'url(' + artist.picture_xl + ')' }">
         <div class="hero-image-details">
           <h1>{{ artist.name }}</h1>
           <h3>{{ artist.nb_fan }} Fans</h3>
@@ -51,11 +64,18 @@
     <h1>Albums</h1>
   </div>
 
-  <section *ngIf="albums" class="album-container">
-    <ng-container *ngFor="let album of albums.data">
-      <app-album-card [album]="album"></app-album-card>
-    </ng-container>
-  </section>
+  <ng-container *ngIf="albums.data.length > 0; else elseAlbumTemplate">
+    <section class="album-container">
+      <ng-container *ngFor="let album of albums.data" class="album-card-container">
+        <app-album-card [album]="album"></app-album-card>
+      </ng-container>
+    </section>
+  </ng-container>
+  <ng-template #elseAlbumTemplate>
+    <div id="album-heading">
+      <h3>Sorry, {{ artist.name }} has no albums available at the moment.</h3>
+    </div>
+  </ng-template>
 </ng-container>
 
 <div *ngIf="(pageLoading$ | async)" class="loading-indicator">

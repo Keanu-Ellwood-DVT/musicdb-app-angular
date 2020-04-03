@@ -2,12 +2,11 @@
   border: 1px solid black;
   border-radius: 8px;
   margin: 0 10px;
-
   background: #b8c7dd;
 }
 
-.album-card img{
-  width:250px;
-  height:250px;
-  object-fit:cover;
+.album-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }

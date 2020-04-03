@@ -9,8 +9,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { TrackListComponent } from './artist-details/track-list/track-list.component';
 import { AlbumCardComponent } from './artist-details/album-card/album-card.component';
-import { MenuModule } from '../static/menu.module';
-
+import { StaticModule } from '../static/static.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     ArtistCardComponent,
@@ -19,7 +22,18 @@ import { MenuModule } from '../static/menu.module';
     TrackListComponent,
     AlbumCardComponent
   ],
-  imports: [CommonModule, ArtistRoutingModule, MatCardModule, MatDividerModule, MatListModule, MenuModule],
+  imports: [
+    CommonModule,
+    ArtistRoutingModule,
+    MatCardModule,
+    MatDividerModule,
+    MatListModule,
+    StaticModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSliderModule,
+    MatTooltipModule
+  ],
   exports: [ArtistRoutingModule]
 })
 export class ArtistModule {}

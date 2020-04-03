@@ -1,3 +1,27 @@
-.fill-remaining-space{
+.fill-remaining-space {
   flex: 1 1 auto;
+}
+
+.playStateButton {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.frame {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  width: 0px;
+  height: 0px;
+}
+
+.track-details{
+ justify-content: center;
+ align-items: center;
+}
+
+.text-icon-button{
+  display: flex;
+  align-items: center;
 }

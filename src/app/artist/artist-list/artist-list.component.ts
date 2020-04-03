@@ -26,12 +26,6 @@ export class ArtistListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.artistsService.getTopArtists().subscribe(x => {
-      this.artists.data = x;
-      this.pageLoading$.next(false);
-    });
-
     this.queryService.queryString$.subscribe(query => {
       this.pageLoading$.next(true);
       if (query === '') {

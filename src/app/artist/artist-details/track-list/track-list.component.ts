@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Track } from 'src/app/models/track';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-track-list',
@@ -11,10 +12,19 @@ export class TrackListComponent implements OnInit {
   track: Track;
 
   trackLength: number;
+  playState$ = new BehaviorSubject<boolean>(false);
 
   constructor() {}
 
   ngOnInit(): void {
-    this.trackLength = this.track.duration * 1000;
+    this.trackLength = this.track.duration;
+  }
+
+  playTrack() {
+    this.playState$.next(true);
+  }
+
+  pauseTrack(){
+    this.playState$.next(false);
   }
 }

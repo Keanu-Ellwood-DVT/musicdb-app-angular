@@ -1,5 +1,55 @@
-<mat-list-item>
-  <span>{{ track.title }}</span>
+<mat-list-item class="track-details">
+  <span><b>{{ track.title }}</b></span>
+
   <span class="fill-remaining-space"></span>
-  <span> {{ trackLength | date:'mm:ss':'UTC'}} </span>
+
+  <div class="text-icon-button">
+    <ng-container *ngIf="(playState$ | async) === false; else elseTemplate">
+      <div class="frame-container">
+        <button
+          class="playStateButton"
+          mat-button
+          matSuffix
+          mat-icon-button
+          matTooltip="Play Preview"
+          aria-label="PlayState"
+          (click)="playTrack()">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button
+        class="playStateButton"
+        mat-button
+        matSuffix
+        mat-icon-button
+        matTooltip="Stop Preview"
+        aria-label="PlayState"
+        (click)="pauseTrack()">
+        <mat-icon>stop</mat-icon>
+      </button>
+      <iframe class="frame" [src]="track.preview | safe: 'resourceUrl'"></iframe>
+    </ng-template>
+
+    <span>{{ trackLength * 1000 | date: "mm:ss":"UTC" }}</span>
+  </div>
+</mat-list-item>
+
+<mat-list-item class="music-player">
+  <p>Album: {{ track.album.title }}</p>
+
+  <span class="fill-remaining-space"></span>
+
+  <a [href]="track.link">
+    <button
+      class="playStateButton"
+      mat-button
+      matSuffix
+      mat-icon-button
+      matTooltip="Listen on Deezer!"
+      aria-label="deezer link">
+      <mat-icon>library_music</mat-icon>
+    </button>
+  </a>
 </mat-list-item>

@@ -45,6 +45,17 @@
   text-align: center;
 }
 
+.returnButton {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.text-icon-button {
+  display: flex;
+  align-items: center;
+}
+
 .album-container {
   padding-top: 1rem;
   display: grid;

@@ -27,6 +27,7 @@
     "@angular/service-worker": "~9.0.7",
     "firebase": "^7.13.1",
     "firebase-tools": "^7.16.1",
+    "moment": "^2.24.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
