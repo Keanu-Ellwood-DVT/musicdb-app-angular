@@ -8,9 +8,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
-  declarations: [MenuComponent, SearchBarComponent, SpinnerComponent],
+  declarations: [MenuComponent, SearchBarComponent, SpinnerComponent, SafePipe],
   imports: [CommonModule,
   MatToolbarModule,
   RouterModule,
@@ -18,6 +19,6 @@ import { SpinnerComponent } from './spinner/spinner.component';
   MatInputModule,
   ReactiveFormsModule
   ],
-  exports: [MenuComponent, SearchBarComponent, SpinnerComponent],
+  exports: [MenuComponent, SearchBarComponent, SpinnerComponent, SafePipe],
 })
-export class MenuModule {}
+export class StaticModule {}
